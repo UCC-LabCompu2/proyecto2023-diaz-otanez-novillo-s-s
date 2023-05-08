@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #1f1d1d;
+}
+
+h1  {
+    display: block;
+    margin: 20px;
+    width: 100%;
+    font-size: 2rem;
+    color: #fff;
+}
+
+b {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+p {
+    color: #ccc;
+    text-align: center;
+}
+
+.title {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+li {
+    padding: 10px;
+    color: #ccc;
+    font-size: 1.2em;
+}
+
+.pyh {
+   display: flex;
+   flex-direction: row;
+}
+
+.paisajes {
+    flex: 1;
+}
+
+.hospe {
+    flex: 1;
+}
