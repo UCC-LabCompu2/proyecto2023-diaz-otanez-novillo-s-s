@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 *{
     margin: 0;
@@ -19,10 +19,7 @@ h1 {
     color: #ddd;
 }
 
-img{
-    width: 60%;
-    padding: 10px 0px 10px 0px;
-}
+
 
 .form{
     background-color: rgb(49, 49, 49);
@@ -42,9 +39,6 @@ img{
     color: rgb(121, 121, 121);
 }
 
-.form_paragraph{
-    font-weight: 300;
-}
 
 .form_link{
     font-weight: 400;

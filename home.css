@@ -28,11 +28,11 @@ body {
     margin-right: 10px;
 }
 
-.logo {
+#logo {
     margin-left: 30px;
 }
 
-.logo a {
+#logo a {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
@@ -275,15 +275,24 @@ p {
     color: #eee;
 }
 
-.contact {
+footer {
     padding-top: 0px;
     background: #121;
     padding-bottom: 0;
 }
 
+
+
 footer.content.contact p {
     margin-top: 8px;
     margin-bottom: 0;
+}
+
+footer img {
+    width: 60%;
+    height: 10em ;
+    margin-top: 8px;
+   
 }
 
 /* responsive */
