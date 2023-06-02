@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Outdoor Center</title>
 	<link rel="stylesheet" href="calendario.css">
 	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="js.js">
+	<script type="text/javascript" src="js.js"></script>
+
 </head>
+
 <body>
 
-    <!-- <div class="head">
+	<!-- barra de navegacion -->
+	<div class="head">
 
-        <div class="logo">
-            <a href="#">Outdoor Center</a>
-        </div>
+		<div id="logo">
+			<a href="#">Outdoor Center</a>
+		</div>
 
-        <nav class="navbar">
-            <a href="#header">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#productos">Productos</a>
-            <a href="#lugar">Lugares</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+		<nav class="navbar">
+			<a href="index.html">Inicio</a>
+			<a href="nosotros.html">Nosotros</a>
+			<a href="lugares.html">Lugares</a>
+		</nav>
 
-    </div> -->
+	</div>
+
+
+	<form id="fechaForm">
+		<label class="fecha" for="fecha">Selecciona un dia de este mes: </label>
+		<input type="date" id="fecha" name="fecha" onchange="mostrarluna()">
+		<button id="resetButton" onclick="resetear()">Restablecer</button>
+	</form>
+	  
 
 	<table class="calendario">
-		<caption>Outdoor Center</caption>
+		<caption>Calendario del mes</caption>
 		<tr>
 			<th>Domingo</th>
 			<th>Lunes</th>
@@ -34,23 +46,23 @@
 			<th>Viernes</th>
 			<th>Sábado</th>
 		</tr>
-    
-        <tr>
+
+		<tr>
 			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>
-			<td>1</td>
-			<td>2</td>
-			<td>3</td>
+			<td>1 </td>
+			<td>2 </td>
+			<td>3 </td>
 		</tr>
 		<tr>
-			<td>4</td>
-			<td>5</td>
-			<td>6</td>
-			<td>7</td>
-			<td>8</td>
-			<td>9</td>
+			<td>4 </td>
+			<td>5 </td>
+			<td>6 </td>
+			<td>7 </td>
+			<td>8 </td>
+			<td>9 </td>
 			<td>10</td>
 		</tr>
 		<tr>
@@ -83,5 +95,5 @@
 
 	</table>
 </body>
-</html>
 
+</html>

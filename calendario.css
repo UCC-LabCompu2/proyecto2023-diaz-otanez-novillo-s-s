@@ -1,19 +1,31 @@
-
 body {
-background: #171717;
+	background: #171717;
 }
 
+#fechaForm {
+	margin-top: 65px;
+}
+
+.fecha {
+	color: #fff;
+	font-size: 20px;
+}
+
+
+
 caption {
-	font-size: 25px;
+	font-size: 20px;
 	color: #ddd;
-	padding: 10px;
+	padding: 7px;
 }
 
 .calendario {
+	margin-top: 10px;
 	margin-left: 10%;
 	margin-right: 10%;
 	width: 80%;
 	table-layout: fixed;
+	
 }
 
 th {
@@ -24,9 +36,9 @@ th {
 
 
 td {
-    height: 100px;
-    border: 1px solid #aaa;
-    margin-top: 3px;
+	height: 100px;
+	border: 1px solid #aaa;
+	margin-top: 3px;
 	color: #ddd;
+	vertical-align: top;
 }
-

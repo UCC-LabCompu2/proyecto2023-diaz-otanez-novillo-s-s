@@ -131,7 +131,7 @@ p {
 }
 
 .btn-home a {
-   margin: 0 10px;
+    margin: 0 10px;
 }
 
 .content {
@@ -252,7 +252,7 @@ p {
 
 .lugares {
     background: url(concepto/atardecer.jpg) no-repeat center;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     text-align: center;
     background-size: cover;
     height: 400px;
@@ -290,21 +290,23 @@ footer.content.contact p {
 
 footer img {
     width: 60%;
-    height: 10em ;
+    height: 10em;
     margin-top: 8px;
-   
+
 }
 
 /* responsive */
 @media (max-width: 768px) {
-   
-    .overlay{
+
+    .overlay {
         width: 80%;
     }
+
     .title {
         margin-bottom: 0;
         font-size: 40px;
     }
+
     .events {
         height: 120vh;
     }

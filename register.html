@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outdoor Center</title>
     <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
+
+    <!-- barra de navegacion -->
+    <div class="head">
+
+        <div id="logo">
+            <a href="#">Outdoor Center</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <a href="login.html">Login</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="lugares.html">Lugares</a>
+        </nav>
+
+    </div>
+
 
     <form class="form">
         <h1>OUTDOOR CENTER</h1>
         <h2 class="form_title">Register</h2>
 
-        <div class="form_container"> 
+        <div class="form_container">
             <div class="form_group">
-                <input type="text" id="name" class="form_input" required  placeholder=" ">
+                <input type="text" id="name" class="form_input" required placeholder=" ">
                 <label for="name" class="form_label">Name</label>
                 <span class="form_line"></span>
             </div>
@@ -25,17 +45,17 @@
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input type="password" id="password" class="form_input"  placeholder=" ">
+                <input type="password" id="password" class="form_input" placeholder=" ">
                 <label for="password" class="form_label">Password</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input type="email" id="email" class="form_input"  placeholder=" ">
+                <input type="email" id="email" class="form_input" placeholder=" ">
                 <label for="email" class="form_label">Email</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input type="number" id="dni" class="form_input"  placeholder=" ">
+                <input type="number" id="dni" class="form_input" placeholder=" ">
                 <label for="dni" class="form_label">DNI</label>
                 <span class="form_line"></span>
             </div>
@@ -45,4 +65,5 @@
     </form>
 
 </body>
+
 </html>
