@@ -1,4 +1,10 @@
 
+/**
+* La función mostrarluna dibuja la luna en un canvas específico, basándose en la fecha seleccionada por el usuario.
+* @method mostrarluna
+* @param {void} No recibe parámetros.
+* @return No retorna ningún valor.
+*/
 function mostrarluna() {
     var fechaSeleccionada = document.getElementById('fecha').value;
     var fechaLocal = new Date(fechaSeleccionada);
@@ -8,9 +14,9 @@ function mostrarluna() {
     var canvas = document.getElementById(canvasId);
     var ctx = canvas.getContext("2d");
 
-    // Dibujar la luna en el día correspondiente
+    // Dibuja la luna el día correspondiente
     if (diaSeleccionado >= 1 && diaSeleccionado <= 15) {
-        // Calcula las coordenadas del centro del canvas
+        // Calcula coordenadas del centro del canvas
         var centerX = canvas.width / 2;
         var centerY = canvas.height / 2;
         var radius = canvas.width / 4;
@@ -23,10 +29,12 @@ function mostrarluna() {
         ctx.shadowBlur = 20;
         ctx.fill();
         ctx.closePath();
+
+        alert("Este dia hay luna llena!")
     }
 
     if (diaSeleccionado >= 16 && diaSeleccionado <= 31) {
-        // Calcula las coordenadas del centro del canvas
+        // Calcula coordenadas del centro del canvas
         var centerX = canvas.width / 2;
         var centerY = canvas.height / 2;
         var radius = canvas.width / 4;
@@ -40,11 +48,19 @@ function mostrarluna() {
         ctx.shadowBlur = 20;
         ctx.fill();
         ctx.closePath();
+
+        alert("Este dia hay media luna!")
     }
 }
 
+/**
+* La función window.onload se ejecuta cuando se carga la página y  genera los elementos canvas en la tabla del calendario.
+* @method window.onload
+* @param {void} No recibe parámetros.
+* @return No retorna ningún valor.
+*/
 window.onload = function() {
-    // Generar los elementos <canvas> para cada día en la tabla
+    // Generar el canvas para cada día de la tabla
     var tabla = document.querySelector('.calendario');
     var filas = tabla.getElementsByTagName('tr');
 
@@ -63,10 +79,17 @@ window.onload = function() {
     }
 };
 
+
+/**
+ * La función resetear restablece la fecha y los elementos canvas.
+ * @method resetear
+ * @param {void} No recibe parámetros.
+ * @return No retorna ningún valor.
+ */
 function resetear() {
-    // Restablecer los valores y estados de los elementos que necesites
-    document.getElementById('fecha').value = ''; // Restablecer el valor del campo de fecha
-    var canvasList = document.getElementsByClassName('lun'); // Obtener la lista de elementos canvas
+    // Restablece los valores y los elementos
+    document.getElementById('fecha').value = ''; // Restablecer el valor de fecha
+    var canvasList = document.getElementsByClassName('lun'); // Obtener lista de elementos canvas
     for (var i = 0; i < canvasList.length; i++) {
       var canvas = canvasList[i];
       var ctx = canvas.getContext('2d');
