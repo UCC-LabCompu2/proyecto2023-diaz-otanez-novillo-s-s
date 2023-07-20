@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +7,14 @@
     <title>Outdoor Center</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="home.css">
+    <script type="text/javascript" src="js.js"></script>
+    <link rel="icon" type="image/png" href="concepto/logo-oc.png">
 </head>
 
 <body>
 
-    <!-- barra de navegacion -->
-    <div class="head">
+     <!-- barra de navegacion -->
+     <div class="head">
 
         <div id="logo">
             <a href="#">Outdoor Center</a>
@@ -28,24 +29,23 @@
 
     </div>
 
-
-    <form class="form">
-        <h1>OUTDOOR CENTER</h1>
+    <form class="form" action="index.html">
+       <h1>OUTDOOR CENTER</h1>
         <h2 class="form_title">Login</h2>
 
-        <div class="form_container">
+        <div class="form_container"> 
             <div class="form_group">
-                <input type="text" id="name" class="form_input" required placeholder=" ">
+                <input type="text" id="name" class="form_input" required pattern="[A-Za-z]+" placeholder=" ">
                 <label for="name" class="form_label">Name</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input type="text" id="user" class="form_input" required placeholder=" ">
+                <input type="text" id="user" class="form_input" required pattern="[A-Za-z]+" placeholder=" ">
                 <label for="user" class="form_label">Last name</label>
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input type="password" id="password" class="form_input" placeholder=" ">
+                <input type="password" id="password" class="form_input" required placeholder=" ">
                 <label for="password" class="form_label">Password</label>
                 <span class="form_line"></span>
             </div>
@@ -54,6 +54,6 @@
         </div>
     </form>
 
-</body>
 
+</body>
 </html>
