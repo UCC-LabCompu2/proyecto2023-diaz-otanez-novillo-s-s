@@ -23,6 +23,7 @@ https://hugodiazo.github.io/outdoorcenter.github.io/
 
 - HTML
 - Css
+- Javascript
 # proyecto2023
  Proyecto Lab de Compu II - 2023
 
