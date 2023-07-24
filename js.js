@@ -6,20 +6,20 @@
 * @return No retorna ningún valor.
 */
 function mostrarluna() {
-    var fechaSeleccionada = document.getElementById('fecha').value;
-    var fechaLocal = new Date(fechaSeleccionada);
-    var diaSeleccionado = new Date(fechaLocal.getUTCFullYear(), fechaLocal.getUTCMonth(), fechaLocal.getUTCDate()).getDate();
+    const fechaSeleccionada = document.getElementById('fecha').value;
+    const fechaLocal = new Date(fechaSeleccionada);
+    const diaSeleccionado = new Date(fechaLocal.getUTCFullYear(), fechaLocal.getUTCMonth(), fechaLocal.getUTCDate()).getDate();
 
-    var canvasId = "canvas" + diaSeleccionado;
-    var canvas = document.getElementById(canvasId);
-    var ctx = canvas.getContext("2d");
+    const canvasId = "canvas" + diaSeleccionado;
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext("2d");
 
     // Dibuja la luna el día correspondiente
     if (diaSeleccionado >= 1 && diaSeleccionado <= 15) {
         // Calcula coordenadas del centro del canvas
-        var centerX = canvas.width / 2;
-        var centerY = canvas.height / 2;
-        var radius = canvas.width / 4;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = canvas.width / 4;
 
         // Dibuja la luna
         ctx.beginPath();
@@ -35,9 +35,9 @@ function mostrarluna() {
 
     if (diaSeleccionado >= 16 && diaSeleccionado <= 31) {
         // Calcula coordenadas del centro del canvas
-        var centerX = canvas.width / 2;
-        var centerY = canvas.height / 2;
-        var radius = canvas.width / 4;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = canvas.width / 4;
 
         // Dibuja la luna
         ctx.beginPath();
@@ -59,17 +59,17 @@ function mostrarluna() {
 * @param {void} No recibe parámetros.
 * @return No retorna ningún valor.
 */
-window.onload = function() {
+window.onload = function () {
     // Generar el canvas para cada día de la tabla
-    var tabla = document.querySelector('.calendario');
-    var filas = tabla.getElementsByTagName('tr');
+    const tabla = document.querySelector('.calendario');
+    const filas = tabla.getElementsByTagName('tr');
 
-    for (var i = 1; i < filas.length; i++) {
-        var celdas = filas[i].getElementsByTagName('td');
-        for (var j = 0; j < celdas.length; j++) {
-            var dia = celdas[j].innerText;
-            var canvasId = "canvas" + dia;
-            var canvas = document.createElement('canvas');
+    for (let i = 1; i < filas.length; i++) {
+        const celdas = filas[i].getElementsByTagName('td');
+        for (let j = 0; j < celdas.length; j++) {
+            const dia = celdas[j].innerText;
+            const canvasId = "canvas" + dia;
+            const canvas = document.createElement('canvas');
             canvas.id = canvasId;
             canvas.className = "lun";
             canvas.width = 150;
@@ -78,7 +78,6 @@ window.onload = function() {
         }
     }
 };
-
 
 /**
  * La función resetear restablece la fecha y los elementos canvas.
@@ -89,13 +88,37 @@ window.onload = function() {
 function resetear() {
     // Restablece los valores y los elementos
     document.getElementById('fecha').value = ''; // Restablecer el valor de fecha
-    var canvasList = document.getElementsByClassName('lun'); // Obtener lista de elementos canvas
-    for (var i = 0; i < canvasList.length; i++) {
-      var canvas = canvasList[i];
-      var ctx = canvas.getContext('2d');
-      ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el contenido de cada canvas
+    const canvasList = document.getElementsByClassName('lun'); // Obtener lista de elementos canvas
+    for (let i = 0; i < canvasList.length; i++) {
+        const canvas = canvasList[i];
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el contenido de cada canvas
     }
 };
-  
 
+document.addEventListener("DOMContentLoaded", function () {
+    let x = 0;
+    const dx = 5;
+    function lunaconstante() {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const img = new Image();
+        img.src = "concepto/faselunas.png";
+
+        img.onload = function () {
+            ctx.drawImage(img, x, 100);
+        };
+
+        if (x > canvas.width) {
+            x = 0;
+        }
+
+        x += dx;
+    }
+
+    // llamar a lunaconstante cada 100 milisegundos
+    setInterval(lunaconstante, 100);
+});
