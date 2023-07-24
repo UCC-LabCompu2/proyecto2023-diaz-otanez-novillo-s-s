@@ -1,10 +1,3 @@
-
-/**
-* La función mostrarluna dibuja la luna en un canvas específico, basándose en la fecha seleccionada por el usuario.
-* @method mostrarluna
-* @param {void} No recibe parámetros.
-* @return No retorna ningún valor.
-*/
 function mostrarluna() {
     const fechaSeleccionada = document.getElementById('fecha').value;
     const fechaLocal = new Date(fechaSeleccionada);
@@ -16,42 +9,76 @@ function mostrarluna() {
 
     // Dibuja la luna el día correspondiente
     if (diaSeleccionado >= 1 && diaSeleccionado <= 15) {
-        // Calcula coordenadas del centro del canvas
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
         const radius = canvas.width / 4;
 
-        // Dibuja la luna
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-        ctx.fillStyle = '#fff';
-        ctx.shadowColor = '#fff';
-        ctx.shadowBlur = 20;
-        ctx.fill();
-        ctx.closePath();
+        let progress = 0; // Variable para el progreso de la animación
+        const maxProgress = 100; // Valor máximo para el progreso (100%)
+        const animationSpeed = 0.5; // Velocidad de la animación (ajusta según preferencia)
 
-        alert("Este dia hay luna llena!")
+        function drawLuna() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const currentProgress = progress / maxProgress;
+            const endAngle = 2 * Math.PI * currentProgress;
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, endAngle);
+            ctx.fillStyle = '#fff';
+            ctx.shadowColor = '#fff';
+            ctx.shadowBlur = 20;
+            ctx.fill();
+            ctx.closePath();
+
+            if (progress < maxProgress) {
+                progress += animationSpeed;
+                requestAnimationFrame(drawLuna);
+            } else {
+                alert("Este día hay luna llena!");
+            }
+        }
+
+        drawLuna();
     }
 
     if (diaSeleccionado >= 16 && diaSeleccionado <= 31) {
-        // Calcula coordenadas del centro del canvas
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
         const radius = canvas.width / 4;
 
-        // Dibuja la luna
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, Math.PI / 2, Math.PI * 1.5, false);
-        ctx.lineTo(centerX, centerY - radius);
-        ctx.fillStyle = '#fff';
-        ctx.shadowColor = '#fff';
-        ctx.shadowBlur = 20;
-        ctx.fill();
-        ctx.closePath();
+        let progress = 0; // Variable para el progreso de la animación
+        const maxProgress = 100; // Valor máximo para el progreso (100%)
+        const animationSpeed = 0.5; // Velocidad de la animación (ajusta según preferencia)
 
-        alert("Este dia hay media luna!")
+        function drawLuna() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const currentProgress = progress / maxProgress;
+            const startAngle = Math.PI / 2;
+            const endAngle = Math.PI * 1.5 * currentProgress;
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle, false);
+            ctx.lineTo(centerX, centerY - radius);
+            ctx.fillStyle = '#fff';
+            ctx.shadowColor = '#fff';
+            ctx.shadowBlur = 20;
+            ctx.fill();
+            ctx.closePath();
+
+            if (progress < maxProgress) {
+                progress += animationSpeed;
+                requestAnimationFrame(drawLuna);
+            } else {
+                alert("Este día hay media luna!");
+            }
+        }
+
+        drawLuna();
     }
 }
+
 
 /**
 * La función window.onload se ejecuta cuando se carga la página y  genera los elementos canvas en la tabla del calendario.
@@ -96,29 +123,4 @@ function resetear() {
     }
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    let x = 0;
-    const dx = 5;
-    function lunaconstante() {
-        const canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext("2d");
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        const img = new Image();
-        img.src = "concepto/faselunas.png";
-
-        img.onload = function () {
-            ctx.drawImage(img, x, 100);
-        };
-
-        if (x > canvas.width) {
-            x = 0;
-        }
-
-        x += dx;
-    }
-
-    // llamar a lunaconstante cada 100 milisegundos
-    setInterval(lunaconstante, 100);
-});
