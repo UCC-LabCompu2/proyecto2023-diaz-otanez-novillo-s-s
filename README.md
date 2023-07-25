@@ -23,6 +23,7 @@ https://ucc-labcompu2.github.io/proyecto2023-diaz-otanez-novillo-s-s/
 - HTML
 - Css
 - Javascript
+
 # proyecto2023
  Proyecto Lab de Compu II - 2023
 
