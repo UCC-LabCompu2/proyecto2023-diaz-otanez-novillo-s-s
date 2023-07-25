@@ -5,8 +5,7 @@
 - **Diaz Otañez**, Hugo
 
 ## Proyecto 
-https://hugodiazo.github.io/outdoorcenter.github.io/
-
+https://ucc-labcompu2.github.io/proyecto2023-diaz-otanez-novillo-s-s/
 
 ## Contacto 
 
